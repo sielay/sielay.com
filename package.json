@@ -30,7 +30,7 @@
     "entypo-optimized": "https://github.com/adamwathan/entypo-optimized.git",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdown-it-anchor": "^5.3.0",
     "moment": "^2.26.0",
     "prismjs": "^1.20.0",

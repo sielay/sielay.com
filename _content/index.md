@@ -15,7 +15,7 @@ layout: layout
         <li><a href="https://www.linkedin.com/in/sielay/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-linkedin.svg"/>LinkedIn profile</a></li>
         <li><a href="https://www.github.com/sielay/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-github.svg"/>GitHub profile</a></li>
       </ul>
-      <strong class="mt-6 block">Careed Advice</strong>
+      <strong class="mt-6 block">Career Advice</strong>
       <p>Should you become a software developer or perhaps there are other interesting paths for your career?</p>
       <ul>
         <li><a href="https://www.amazon.co.uk/dp/B0B3LP8Z8M" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-amazon.svg"/>Buy Book (GB)</a></li>

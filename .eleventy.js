@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPassthroughCopy("_content/**/*.jpg");
+  eleventyConfig.addPassthroughCopy("_content/**/*.css");
   eleventyConfig.addPassthroughCopy("_content/**/*.png");
   eleventyConfig.addPassthroughCopy("_content/**/*.svg");
   eleventyConfig.addFilter("kebab", kebabCase);

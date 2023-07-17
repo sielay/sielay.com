@@ -6,7 +6,7 @@
   "scripts": {
     "build": "yarn run clean && npx @11ty/eleventy",
     "develop": "NODE_ENV=development npx @11ty/eleventy --serve",
-    "clean": "rm -rf functions-build && mkdir functions-build"
+    "clean": "rm -rf _site && rm -rf functions-build && mkdir functions-build"
   },
   "repository": {
     "type": "git",

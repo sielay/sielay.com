@@ -1,5 +1,5 @@
 [build]
-    command = "echo true"
+    command = "npm run build"
     publish = "_site"
     NODE_ENV = "8.11.3"
 

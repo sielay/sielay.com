@@ -1,8 +1,3 @@
 module.exports = {
-  content: ["./_content/**/*"],
-  safelist: [
-    {
-      pattern: /./,
-    },
-  ],
+  content: ["./_content/**/*"]
 };

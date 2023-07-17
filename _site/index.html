@@ -1,0 +1,208 @@
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charSet='utf-8'/>
+        <meta httpEquiv='x-ua-compatible' content='ie=edge'/>
+
+        <link type="application/atom+xml" rel="alternate" href="." title="">
+        
+
+        <title>SIELAY.com &verbar; </title>
+        <meta name="description" content="" />
+        <link rel="canonical" href="/" />
+
+        <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="undefined" />
+      <meta name="twitter:title" content="SIELAY.com &verbar; " />
+      <meta name="twitter:description" content="" />
+      <meta property="og:title" content="SIELAY.com &verbar; " />
+      <meta property="og:type" content="Website" />
+      <meta property="og:url" content="undefined" />
+      <meta property="og:image" content="undefined" />
+      <meta property="og:site_name" contents="undefined" />
+        <meta property="og:description" contents="" />
+      <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+            "url": "/",
+            "name": "SIELAY.com &verbar; ",
+            "description": "",
+            
+            "author": { "@type": "Person", "name": "undefined", 
+                "sameAs": ["","","","",""] }
+	}
+	</script><meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, shrink-to-fit=no'
+/>
+        <title>SIELAY.com</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v14/JTUQjIg1_i6t8kCHKm45_QpRyS7m0dR9pA.woff2" as="font" crossorigin>
+        <link rel="preload" href="https://fonts.gstatic.com/s/arvo/v13/tDbD2oWUg0MKqScQ7Z7o_vo.woff2" as="font" crossorigin>
+        <link rel="preload" href="https://fonts.gstatic.com/s/muli/v20/7Auwp_0qiz-afTLGLQjUwkQ.woff2" as="font" crossorigin>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100&display=swap" as="stylesheet" crossorigin>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body class="bg-gray-100 leading-normal tracking-normal relative dark">
+        <header class="fixed w-full z-10 top-0 shadow-2xl font-navigation bg-black text-white">
+    <div class= "w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+        <div class="pl-4">
+            <a href="/" class="text-base no-underline hover:no-underline font-extrabold text-xl ">
+                SIELAY <small class="italic text-sm font-normal">I wear many hats</small>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded hover:text-gray-800 hover:border-gray-800 appearance-none focus:outline-none" onClick="document.body.classList.toggle('show-sidebar')">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="sidebar w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 md:bg-transparent z-20 hidden lg:block" id="nav-content">
+            <ul class="lg:flex justify-end flex-1 items-center">
+                <li>
+                    <a href="/" class="ml-2"></a>
+                </li></ul>
+        </div>
+    </div>
+</header>
+        <div class="bg-indigo-900 text-center py-4 lg:px-4 sticky bottom-0 z-20 mt-12 hidden px-3" id="cookie-consent">
+  <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex flex-wrap" role="alert">
+    <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3 mb-2 lg:mb-0">Mind Cookies?</span>
+    <span class="font-semibold mr-2 text-left flex-auto mb-2 lg:mb-0">I need them for Google Analytics and Newsletter forms.</span>
+    <button id="enable-cookies" class="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">Enable</span>
+    <button id="disable-cookies" class="flex rounded-full bg-red-500 uppercase px-2 py-1 text-xs font-bold mr-3">Block</span>
+  </div>
+</div>
+<script>
+  (function(a,b,c){b=document,c='addEventListener';b[c]?b[c]('DOMContentLoaded',a):window.attachEvent('onload',a)})(function() {
+    var consent = document.getElementById('cookie-consent');
+    var enable = document.getElementById('enable-cookies');
+    var disable = document.getElementById('disable-cookies');
+
+    var cookie = document.cookie.match(/(^|;\s*)(CookieConsent=)(true|false)/);
+
+    function setCookie(name, value, days) {
+      var d = new Date;
+      d.setTime(d.getTime() + 24*60*60*1000*days);
+      document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+    }
+    if (!cookie) {
+      consent.style.display = 'block';
+      enable.addEventListener('click', function() {        
+        consent.style.display = 'none';
+        setCookie('CookieConsent', 'true');
+        document.location.reload(true);
+      });
+      disable.addEventListener('click', function() {        
+        consent.style.display = 'none';
+        setCookie('CookieConsent', 'false');
+      });
+    } else {
+      document.cookieConsent = cookie[3] === 'true';
+
+      // GA
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-11342805-1');
+
+      (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=UA-11342805-1';
+      (d.head || d.body).appendChild(s);
+      })();
+
+      if (document.getElementById('disqus_thread')) {
+        // Disqus
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://sielay-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      }
+    }
+    
+  });
+</script>
+        
+        
+        <div class="container w-full md:max-w-3xl mx-auto mt-14">
+        
+            
+            <div class="Hero">
+    <div class="Hero__left"></div>
+    <div class="Hero__center"></div>
+    <div class="Hero__right"></div>
+</div>
+<div class="Cards">
+    <div class="Card bg-blue-400">
+      <strong>Professional</strong>
+      <p>I can share with you my 20+ years of experience in technology and 10+ in management.</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/sielay/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-linkedin.svg"/>LinkedIn profile</a></li>
+        <li><a href="https://www.github.com/sielay/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-github.svg"/>GitHub profile</a></li>
+      </ul>
+      <strong class="mt-6 block">Careed Advice</strong>
+      <p>Should you become a software developer or perhaps there are other interesting paths for your career?</p>
+      <ul>
+        <li><a href="https://www.amazon.co.uk/dp/B0B3LP8Z8M" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-amazon.svg"/>Buy Book (GB)</a></li>
+        <li><a href="https://becomingdeveloper.com" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cil-globe-alt.svg"/>Website</a></li>
+        <li><a href="https://www.tiktok.com/@shouldyoubecomedeveloper" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-tiktok.svg"/>TikTok profile</a></li>
+        <li><a href="https://www.twitter.com/coderebased/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-twitter.svg"/>Twitter profile</a></li>
+        <li><a href="https://www.instagram.com/shouldyoubecomedeveloper/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-instagram.svg"/>Instagram profile</a></li>
+        <li><a href="https://youtube.com/channel/UChzpCoVwXu2ii_UQkuGEQGQ" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-youtube.svg"/>YouTube profile</a></li>
+        <li>
+          ...or buy elsewhere:
+          <a href="https://www.amazon.com/dp/B0B3LP8Z8M" target="_blank">US</a>,
+          <a href="https://www.amazon.com.br/dp/B0B2CGTMVY" target="_blank">BR</a>,
+          <a href="https://www.amazon.ca/dp/B0B2CGTMVY" target="_blank">CA</a>,
+          <a href="https://www.amazon.com.mx/Should-You-Become-Software-Developer-ebook/dp/B0B2CGTMVY" target="_blank">MX</a>,
+          <a href="https://www.amazon.com.au/dp/B0B2CGTMVY" target="_blank">AU</a>,
+          <a href="https://www.amazon.co.jp/dp/B0B2CGTMVY" target="_blank">JP</a>,
+          <a href="https://www.amazon.nl/dp/B0B2CGTMVY" target="_blank">NL</a>,
+          <a href="https://www.amazon.es/dp/B0B2CGTMVY" target="_blank">ES</a>,
+          <a href="https://www.amazon.fr/dp/B0B2CGTMVY" target="_blank">FR</a>,
+          <a href="https://www.amazon.it/dp/B0B2CGTMVY" target="_blank">IT</a>,
+          <a href="https://www.amazon.de/dp/B0B2CGTMVY" target="_blank">DE</a>,
+          <a href="https://www.amazon.pl/Should-you-Become-Software-Developer/dp/B0B3LP8Z8M" target="_blank">PL</a>,
+          <a href="https://www.amazon.in/dp/B0B2CGTMVY" target="_blank">IN</a>.
+        </li>
+<p></ul>
+</div>
+<div class="Card bg-orange-400">
+<strong>Personal</strong>
+<p>Pole with roots and love to neighbouring countries who restarted his life in the UK.</p>
+<ul>
+<li><a href="https://www.tiktok.com/@realsielay" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-tiktok.svg"/>TikTok profile</a></li>
+<li><a href="https://www.twitter.com/sielay/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-twitter.svg"/>Twitter profile</a></li>
+<li><a href="https://www.youtube.com/channel/UC6XZddGHmccMXLwMYBlXpOw" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-youtube.svg"/>YouTube profile</a></li>
+</ul>
+</div>
+<div class="Card bg-red-500">
+<strong>Community</strong>
+<p>Do my best to make our roads safer and invest in our youth growth.</p>
+<ul>
+<li><a href="https://www.twitter.com/phonekills/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-twitter.svg"/>Twitter profile</a></li>
+<li><a href="https://www.youtube.com/c/phonekills/videos" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-youtube.svg"/>YouTube profile</a></li>
+<li><a href="https://www.instagram.com/phonekillsuk/" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-instagram.svg"/>Instagram profile</a></li>
+<li><a href="https://c.im/@phonekills" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-mastodon.svg"/>Mastodon profile</a></li>
+<li><a href="https://www.threads.net/@phonekillsuk" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cib-facebook.svg"/>Threads profile</a></li>
+<li><a href="https://phonekills.co.uk" target="_blank"><img class="w-4 h-4 inline-block" src="/images/cil-globe-alt.svg"/><strong>SOON!</strong> book</a></li>
+</ul>
+</div></p>
+</div>
+            
+        </div>
+        <footer class="w-full z-10 shadow-2xl font-navigation bg-black text-gray-400 h-12 clear">
+            &copy; Łukasz Marek Sielski 2023
+        </footer>
+    </body>
+</html>

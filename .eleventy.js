@@ -22,11 +22,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLib);
   shortcodes(eleventyConfig);
 
-  eleventyConfig.addWatchTarget("./styles.scss");
   eleventyConfig.addPlugin(pluginSass, {
     watch: ["./*.scss", "!node_modules/**", "!_site"],
-    sourcemaps: true,
-    additionalSteps: [() => postcss([tailwindcss("./tailwind.config.js")/*, clean()*/])],
+    additionalSteps: [() => postcss([tailwindcss("./tailwind.config.js"), clean()])],
   });
 
   eleventyConfig.addPlugin(pluginRss);

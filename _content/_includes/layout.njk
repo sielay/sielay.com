@@ -1,0 +1,84 @@
+{% set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{% set pageTitle -%}{{renderData.title or title }} &verbar; {{ site.title }}{%- endset -%}
+{% set pageDescription -%}{{renderData.description or description or site.description}}{%- endset -%}
+{% set pageDate -%}{{ page.date.toISOString() }}{%- endset -%}
+{% if image %}{%set pageImage %}{{image | url | absoluteUrl(absolutePageUrl)}}{%- endset -%}{% endif -%}
+{% set isPost = layout == 'blogpost.njk' %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charSet='utf-8'/>
+        <meta httpEquiv='x-ua-compatible' content='ie=edge'/>
+
+        <link type="application/atom+xml" rel="alternate" href="{{ site.feed | url | absoluteUrl(absolutePageUrl) }}" title="{{ site.title }}">
+        
+
+        {% metaTitle pageTitle %}
+        {% metaDescription pageDescription %}
+        {% canonical absolutePageUrl %}
+
+        {% twitterSummaryCard author.twitter.name, pageTitle, pageDescription, pageImage -%}
+        {%- if isPost -%}
+        {% opengraphRequired pageTitle, "Article", absolutePageUrl, pageImage or site.header_image -%}
+        {% opengraphArticlePublished pageDate %}
+        {% if tags %}{% opengraphArticleTags tags %}{% endif %}
+        {%- else -%}
+        {% opengraphRequired pageTitle, "Website", site.url, pageImage or site.header_image -%}
+        {%- endif -%}
+        {% opengraphSite site.title %}
+        {% opengraphDescription pageDescription %}
+
+        {%- if isPost -%}
+        {% jsonldBlogPosting renderData.title or title %}
+            {% jsonldDescription renderData.description or description %}
+            {% jsonldMainEntity absolutePageUrl %}
+            {% jsonldAuthor author.name %}
+                {% jsonldSameAs  author.website.url, author.twitter.url, author.linkedin.url, author.instagram.url, author.github.url %}
+            {% endjsonldAuthor %}
+            {% jsonldDatePublished pageDate %}
+            {% if image %}{% jsonldImage pageImage %}{% endif %}
+        {% endjsonldBlogPosting %}
+        {%- else -%}
+        {% jsonldWrapper "WebPage" %}
+            {% jsonldUrl absolutePageUrl %}
+            {% jsonldName pageTitle %}
+            {% jsonldDescription pageDescription %}
+            {% if image %}{% jsonldImage pageImage %}{% endif %}
+            {% jsonldAuthor author.name %}
+                {% jsonldSameAs  author.website.url, author.twitter.url, author.linkedin.url, author.instagram.url, author.github.url %}
+            {% endjsonldAuthor %}
+        {% endjsonldWrapper %}
+        {%- endif -%}
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, shrink-to-fit=no'
+/>
+        <title>{{ title }}</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v14/JTUQjIg1_i6t8kCHKm45_QpRyS7m0dR9pA.woff2" as="font" crossorigin>
+        <link rel="preload" href="https://fonts.gstatic.com/s/arvo/v13/tDbD2oWUg0MKqScQ7Z7o_vo.woff2" as="font" crossorigin>
+        <link rel="preload" href="https://fonts.gstatic.com/s/muli/v20/7Auwp_0qiz-afTLGLQjUwkQ.woff2" as="font" crossorigin>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100&display=swap" as="stylesheet" crossorigin>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body class="bg-gray-100 leading-normal tracking-normal relative dark">
+        {% include './navigation.njk' %}
+        {% include './consent.njk' %}
+        
+        {% if fullwidth %}
+        <div class="container w-full md:max-w-3xl xl:max-w-full xl:px-12 mx-auto mt-14">
+        {% else %}
+        <div class="container w-full md:max-w-3xl mx-auto mt-14">
+        {% endif %}
+            {{ page.renderData | keys | dump }}
+            {% block inner %}{{content | safe}}{% endblock %}
+            {% block rest %}{% endblock %}
+        </div>
+        <footer class="w-full z-10 shadow-2xl font-navigation bg-black text-gray-400 h-12 clear">
+            &copy; Łukasz Marek Sielski 2023
+        </footer>
+    </body>
+</html>

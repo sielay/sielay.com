@@ -1,0 +1,43 @@
+[build]
+    command = "npm run build"
+    publish = "_site"
+    NODE_ENV = "8.11.3"
+
+[build.environment]
+    NODE_VERSION = "14.19.2"
+    YARN_VERSION = "1.22.18"
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        X-Frame-Options = "DENY"
+        X-XSS-Protection = "1; mode=block"
+        X-Content-Type-Options = "nosniff"
+        Referrer-Policy= "no-referrer-when-downgrade"
+
+# Netlify subdomain
+# [[redirects]]
+#    from = "https://sielay.netlify.com/*"
+#    to = "https://sielay.com/:splat"
+#    status = 301
+#    force = true
+
+# Bots
+[[redirects]]
+    from = "/wp-login.php"
+    to = "https://www.google.com/"
+    status = 302
+    force = true
+
+# Favicon
+[[redirects]]
+    from = "/assets/images/touch/*"
+    to = "/assets/images/favicon/:splat"
+    status = 301
+    force = true
+
+# 404s
+[[redirects]]
+    from = "*"
+    to = "/404"
+    status = 404

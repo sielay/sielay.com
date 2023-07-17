@@ -1,0 +1,29 @@
+<header class="fixed w-full z-10 top-0 shadow-2xl font-navigation bg-black text-white">
+    <div class= "w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+        <div class="pl-4">
+            <a href="/" class="text-base no-underline hover:no-underline font-extrabold text-xl ">
+                SIELAY <small class="italic text-sm font-normal">I wear many hats</small>
+            </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded hover:text-gray-800 hover:border-gray-800 appearance-none focus:outline-none" onClick="document.body.classList.toggle('show-sidebar')">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="sidebar w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 md:bg-transparent z-20 hidden lg:block" id="nav-content">
+            <ul class="lg:flex justify-end flex-1 items-center">
+                <li>
+                    <a href="/" class="ml-2"></a>
+                </li>
+                {%- for page in collections.topNav -%}
+                    <li>
+                        <a href="{{ page.url }}" class="ml-2">{{ page.data.title }}</a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
+</header>

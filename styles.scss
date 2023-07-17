@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-white w-full h-full;
+}
+
+.Cards {
+  @apply flex flex-col gap-2 mt-2 w-full;
+  & > .Card {
+    @apply p-4 w-full flex-auto text-white;
+    & > p {
+        @apply italic text-sm pb-4 block px-2 py-2 mt-4 mb-8;
+        background-color: rgba(0, 0, 0, .1);
+    }
+    img {
+        @apply mr-2;
+        margin-top: -.25rem;
+    }
+    li {
+        @apply pb-2;
+    }
+  }
+}
+
+.Hero {
+  @apply flex flex-row w-full h-36 gap-2;
+
+  & > * {
+    @apply flex-auto bg-cover bg-center;
+  }
+  &__left {
+    background-image: url("./images/left.png");
+  }
+  &__center {
+    background-image: url("./images/center.png");
+  }
+  &__right {
+    background-image: url("./images/right.png");
+  }
+}
+
+@media (min-width: 640px) {
+  .Cards {
+    @apply flex-row;
+  }
+  .Hero {
+    @apply h-64;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Hero {
+    @apply h-96;
+  }
+}

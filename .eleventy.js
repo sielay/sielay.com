@@ -1,12 +1,9 @@
-const pluginSass = require("eleventy-plugin-sass");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const postcss = require("gulp-postcss");
-const clean = require("postcss-clean");
-const tailwindcss = require("tailwindcss");
 const markdownIt = require("markdown-it");
 const { kebabCase } = require("lodash");
 const { defaults: anchor } = require("markdown-it-anchor");
 const shortcodes = require("./_content/_includes/shortcodes");
+const pluginTailwindCSS = require("eleventy-plugin-tailwindcss");
 anchor.permalinkSymbol = '🔗';
 
 module.exports = function (eleventyConfig) {
@@ -22,10 +19,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLib);
   shortcodes(eleventyConfig);
 
-  eleventyConfig.addPlugin(pluginSass, {
-    watch: ["./*.scss", "!node_modules/**", "!_site"],
-    additionalSteps: [() => postcss([tailwindcss("./tailwind.config.js"), clean()])],
-  });
+  eleventyConfig.addPlugin(pluginTailwindCSS, {
+    src: "styles.scss",
+    dest: ".",
+    keepFolderStructure: false,
+    minify: false
+    // See below for other available options
+});
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPassthroughCopy("_content/**/*.jpg");

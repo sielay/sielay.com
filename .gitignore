@@ -1,3 +1,4 @@
 node_modules
 functions-build
 _site
+.DS_store
